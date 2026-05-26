@@ -21,7 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('open');
       document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
     });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    // Close menu when any non-submenu link is clicked
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', (e) => {
+      // If this is the parent "Services" link inside a has-submenu on mobile, toggle the submenu instead
+      const parentLi = a.closest('.has-submenu');
+      if (parentLi && window.innerWidth <= 768 && a.parentElement === parentLi) {
+        e.preventDefault();
+        parentLi.classList.toggle('open');
+        return;
+      }
       toggle.classList.remove('open');
       navLinks.classList.remove('open');
       document.body.style.overflow = '';
