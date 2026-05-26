@@ -202,18 +202,20 @@ section { padding: var(--s-xl) 0; }
   letter-spacing: -0.01em;
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   line-height: 0.95;
 }
 .logo-sub {
   font-family: var(--font-body);
   font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--olive);
-  margin-top: 0.35rem;
+  margin-top: 0.55rem;
+  margin-left: 0.12em; /* visually compensate for the letter-spacing trailing edge */
   line-height: 1;
+  text-align: center;
 }
 .footer-brand .logo-sub { color: var(--olive-light); opacity: 0.85; }
 .footer-brand .logo-img { width: 64px; height: 64px; }
