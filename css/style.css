@@ -116,42 +116,49 @@ p { margin-bottom: 1rem; }
 section { padding: var(--s-xl) 0; }
 .section-tight { padding: var(--s-lg) 0; }
 
-/* ============ HEADER / NAV ============ */
+/* ============ HEADER / NAV ============
+   Initial state (over hero):  solid cream with hard bottom cut-off — bold.
+   Scrolled state:             soft fade-out gradient into content below.
+   ============================================================ */
 .header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  padding-bottom: 20px; /* tiny sharp fade band */
-  background: linear-gradient(to bottom,
-    rgba(234, 230, 225, 0.95) 0,
-    rgba(234, 230, 225, 0.95) 108px,
-    rgba(234, 230, 225, 0) 100%);
+  padding-bottom: 0;
+  background: rgba(234, 230, 225, 0.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 112px, transparent 100%);
-          mask-image: linear-gradient(to bottom, #000 0, #000 112px, transparent 100%);
-  pointer-events: none;
+  -webkit-mask-image: none;
+          mask-image: none;
   z-index: 100;
   border: none;
   border-bottom: 0;
   box-shadow: none;
   outline: none;
-  transition: background var(--t) var(--ease);
+  transition: background 0.5s var(--ease),
+              padding-bottom 0.5s var(--ease),
+              mask-image 0.5s var(--ease),
+              -webkit-mask-image 0.5s var(--ease);
 }
-/* Re-enable clicks on the nav itself (since header has pointer-events:none for the faded zone) */
-.header > .container,
-.header .nav,
-.header a,
-.header button { pointer-events: auto; }
 
 .header.scrolled {
+  padding-bottom: 20px;
   background: linear-gradient(to bottom,
     rgba(234, 230, 225, 0.97) 0,
     rgba(234, 230, 225, 0.97) 108px,
     rgba(234, 230, 225, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 112px, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0, #000 112px, transparent 100%);
   border: none;
   border-bottom: 0;
   box-shadow: none;
 }
+
+/* Re-enable clicks on the nav itself when scrolled (the faded zone otherwise blocks them) */
+.header.scrolled { pointer-events: none; }
+.header.scrolled > .container,
+.header.scrolled .nav,
+.header.scrolled a,
+.header.scrolled button { pointer-events: auto; }
 /* Header runs edge-to-edge with generous side padding */
 .header > .container {
   max-width: none;
