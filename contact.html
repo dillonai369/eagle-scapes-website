@@ -75,7 +75,7 @@
           -->
           <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="estimate-form">
             <!-- Web3Forms access key (replace before launch) -->
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+            <input type="hidden" name="access_key" value="37b83f8d-a651-4e7b-9469-75d50ca8ea80">
             <!-- Subject line for incoming email -->
             <input type="hidden" name="subject" value="New Estimate Request — Eagle Scapes Website">
             <!-- Where the form should redirect after submit (optional thank-you page) -->
@@ -118,8 +118,17 @@
               </select>
             </div>
             <div class="form-group"><label for="f-message">Tell us about your project</label><textarea id="f-message" name="message" placeholder="A few details about your property and what you're looking for…"></textarea></div>
+
+            <!-- SMS Consent (A2P 10DLC Required) -->
+            <div class="form-group" style="background:#f6f4ef; border:1px solid #d8d3c4; padding:1rem 1.1rem; border-radius:8px; margin-top:0.5rem;">
+              <label style="display:flex; gap:0.7rem; align-items:flex-start; cursor:pointer; font-size:0.88rem; line-height:1.5; color:#333; font-weight:400;">
+                <input type="checkbox" id="f-sms-consent" name="sms_consent" value="yes" style="margin-top:0.25rem; flex-shrink:0; width:18px; height:18px; accent-color:var(--olive);" />
+                <span>I agree to receive SMS text messages from <strong>Eagle Scapes &amp; Home Services</strong> regarding my estimate, scheduling, appointment reminders, and service updates. Message frequency varies. Message &amp; data rates may apply. Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help. Consent is not a condition of purchase. See our <a href="privacy.html" style="color:var(--olive); text-decoration:underline;">Privacy Policy</a> and <a href="terms.html" style="color:var(--olive); text-decoration:underline;">Terms of Service</a>.</span>
+              </label>
+            </div>
+
             <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send My Request</button>
-            <p style="font-size:0.8rem; color:#888; margin-top:0.75rem; text-align:center;">We respond within 24 hours. Your info is never shared.</p>
+            <p style="font-size:0.8rem; color:#888; margin-top:0.75rem; text-align:center;">We respond within 24 hours. Your info is never shared with third parties for marketing.</p>
           </form>
         </div>
 
