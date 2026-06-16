@@ -9,11 +9,24 @@
   <meta property="og:title" content="Contact Eagle Scapes | Free Landscaping Estimates in Aurora, OH" />
   <meta property="og:description" content="Request a free landscaping or lawn care estimate. Call (216) 214-2070 or send a message. Serving Aurora, Chagrin Falls, Bainbridge & South Russell, Ohio." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.eaglescapeslawncare.com/images/og-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Eagle Scapes Lawn Care — Precision Care. Powerful Results." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.eaglescapeslawncare.com/images/og-preview.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
   
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.eaglescapeslawncare.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://www.eaglescapeslawncare.com/contact"}]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
 </head>
 <body>
   <header class="header">
@@ -48,19 +61,42 @@
     <div class="container">
       <div class="feature-split">
         <div class="reveal reveal-left">
-          <form class="contact-form">
+          <!--
+            ┌────────────────────────────────────────────────────────────────┐
+            │  FORM SUBMISSIONS go to eaglescapes23@gmail.com via Web3Forms │
+            │  ──────────────────────────────────────────────────────────── │
+            │  Setup (one-time, ~60 seconds):                              │
+            │   1. Go to https://web3forms.com/                            │
+            │   2. Type eaglescapes23@gmail.com → click "Create Access Key"│
+            │   3. Verify the email Web3Forms sends (one click)            │
+            │   4. Copy the access key, replace YOUR_WEB3FORMS_KEY below   │
+            │   5. Push to GitHub — done. First test submission verifies. │
+            └────────────────────────────────────────────────────────────────┘
+          -->
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="estimate-form">
+            <!-- Web3Forms access key (replace before launch) -->
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+            <!-- Subject line for incoming email -->
+            <input type="hidden" name="subject" value="New Estimate Request — Eagle Scapes Website">
+            <!-- Where the form should redirect after submit (optional thank-you page) -->
+            <input type="hidden" name="redirect" value="https://www.eaglescapeslawncare.com/contact?sent=1">
+            <!-- From-name field that shows up in the email -->
+            <input type="hidden" name="from_name" value="Eagle Scapes Website">
+            <!-- Botcheck honeypot field — bots fill it, real users don't -->
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
             <h3 style="margin-bottom:1.5rem;">Request a free estimate</h3>
             <div class="form-row">
-              <div class="form-group"><label>First Name *</label><input type="text" required name="first" /></div>
-              <div class="form-group"><label>Last Name *</label><input type="text" required name="last" /></div>
+              <div class="form-group"><label for="f-first">First Name *</label><input type="text" id="f-first" required name="first_name" autocomplete="given-name" /></div>
+              <div class="form-group"><label for="f-last">Last Name *</label><input type="text" id="f-last" required name="last_name" autocomplete="family-name" /></div>
             </div>
             <div class="form-row">
-              <div class="form-group"><label>Email *</label><input type="email" required name="email" /></div>
-              <div class="form-group"><label>Phone</label><input type="tel" name="phone" /></div>
+              <div class="form-group"><label for="f-email">Email *</label><input type="email" id="f-email" required name="email" autocomplete="email" /></div>
+              <div class="form-group"><label for="f-phone">Phone</label><input type="tel" id="f-phone" name="phone" autocomplete="tel" /></div>
             </div>
             <div class="form-group">
-              <label>City *</label>
-              <select required name="city">
+              <label for="f-city">City *</label>
+              <select id="f-city" required name="city">
                 <option value="">Select a city…</option>
                 <option>Aurora</option>
                 <option>Chagrin Falls</option>
@@ -71,18 +107,19 @@
               </select>
             </div>
             <div class="form-group">
-              <label>What service are you interested in? *</label>
-              <select required name="service">
+              <label for="f-service">What service are you interested in? *</label>
+              <select id="f-service" required name="service">
                 <option value="">Select a service…</option>
                 <option>Property Maintenance / Lawn Care</option>
                 <option>Landscaping / Bed Install / Mulch</option>
-                <option>Cleanups & Pruning</option>
+                <option>Cleanups &amp; Pruning</option>
                 <option>Snow Removal</option>
                 <option>Multiple services</option>
               </select>
             </div>
-            <div class="form-group"><label>Tell us about your project</label><textarea name="message" placeholder="A few details about your property and what you're looking for…"></textarea></div>
+            <div class="form-group"><label for="f-message">Tell us about your project</label><textarea id="f-message" name="message" placeholder="A few details about your property and what you're looking for…"></textarea></div>
             <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send My Request</button>
+            <p style="font-size:0.8rem; color:#888; margin-top:0.75rem; text-align:center;">We respond within 24 hours. Your info is never shared.</p>
           </form>
         </div>
 
@@ -130,10 +167,11 @@
           <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon – Sat: 8:00 AM – 5:30 PM</div>
         </div>
       </div>
-      <div class="footer-bottom"><p>© 2026 Eagle Scapes & Home Services. All rights reserved.</p><p><a href="blog.html" style="color:var(--olive-light); margin-right:0.6rem;">Read Our Blog &rarr;</a>· Made with care in Aurora, Ohio.</p></div>
+      <div class="footer-bottom"><p>© 2026 Eagle Scapes & Home Services. All rights reserved.</p><p><a href="blog.html" style="color:var(--olive-light); margin-right:0.6rem;">Read Our Blog &rarr;</a>· Made with care in Aurora, Ohio. · <a href="privacy.html" style="color:var(--olive-light);">Privacy</a> · <a href="terms.html" style="color:var(--olive-light);">Terms</a></p></div>
     </div>
   </footer>
   <a href="tel:+12162142070" class="floating-call" aria-label="Call Eagle Scapes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
   <script src="js/main.js"></script>
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a30c059bd8129997dc5da73" data-source="WEB_USER"></script>
 </body>
 </html>

@@ -2,20 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.eaglescapeslawncare.com/</loc><priority>1.00</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.eaglescapeslawncare.com/services</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/services/property-maintenance</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/services/landscaping</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/services/cleanups-pruning</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/services/snow-removal</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/services/property-maintenance</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/services/landscaping</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/services/cleanups-pruning</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/services/snow-removal</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.eaglescapeslawncare.com/about</loc><priority>0.80</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.eaglescapeslawncare.com/portfolio</loc><priority>0.80</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/contact</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/blog</loc><priority>0.80</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/contact</loc><priority>0.95</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/blog</loc><priority>0.85</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.eaglescapeslawncare.com/blog/spring-cleanup-northeast-ohio</loc><priority>0.75</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.eaglescapeslawncare.com/blog/mulch-guide-aurora-ohio</loc><priority>0.75</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.eaglescapeslawncare.com/blog/lake-effect-snow-prep</loc><priority>0.75</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/service-areas/aurora</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/service-areas/chagrin-falls</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/service-areas/bainbridge</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/service-areas/south-russell</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.eaglescapeslawncare.com/service-areas/auburn</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/blog/fall-leaf-cleanup-aurora</loc><priority>0.75</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/blog/how-much-mulch-do-i-need</loc><priority>0.75</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/blog/landscape-design-trends-2026</loc><priority>0.75</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/service-areas/aurora</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/service-areas/chagrin-falls</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/service-areas/bainbridge</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/service-areas/south-russell</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/service-areas/auburn</loc><priority>0.90</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/privacy</loc><priority>0.30</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.eaglescapeslawncare.com/terms</loc><priority>0.30</priority><changefreq>yearly</changefreq></url>
 </urlset>

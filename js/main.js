@@ -91,26 +91,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* === Form submission (demo handler) === */
+  /* === Contact form: real submission to Web3Forms via fetch === */
   const form = document.querySelector('.contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       if (!btn) return;
-      const original = btn.textContent;
+      const originalLabel = btn.textContent;
+      const accessKey = form.querySelector('input[name="access_key"]')?.value;
+
+      // If access key still placeholder, fall back to mailto so it works locally
+      if (!accessKey || accessKey === 'YOUR_WEB3FORMS_KEY') {
+        const data = new FormData(form);
+        const body = encodeURIComponent(
+          `New estimate request from ${data.get('first_name')} ${data.get('last_name')}\n\n` +
+          `Email: ${data.get('email')}\nPhone: ${data.get('phone') || '(not provided)'}\n` +
+          `City: ${data.get('city')}\nService: ${data.get('service')}\n\n` +
+          `Message:\n${data.get('message') || '(none)'}`
+        );
+        window.location.href = `mailto:eaglescapes23@gmail.com?subject=New%20Estimate%20Request&body=${body}`;
+        return;
+      }
+
       btn.textContent = 'Sending…';
       btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = '✓ Thank you! We\'ll be in touch within 24 hours.';
-        btn.style.background = 'var(--brown-dark)';
-        form.reset();
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        const json = await res.json().catch(() => ({}));
+        if (res.ok && json.success !== false) {
+          btn.textContent = '✓ Got it! We\'ll be in touch within 24 hours.';
+          btn.style.background = 'var(--brown-dark)';
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = originalLabel;
+            btn.disabled = false;
+            btn.style.background = '';
+          }, 6000);
+        } else {
+          throw new Error(json.message || 'Form submission failed');
+        }
+      } catch (err) {
+        btn.textContent = '⚠ Couldn\'t send — try calling (216) 214-2070';
+        btn.style.background = '#a04040';
         setTimeout(() => {
-          btn.textContent = original;
+          btn.textContent = originalLabel;
           btn.disabled = false;
           btn.style.background = '';
-        }, 4500);
-      }, 900);
+        }, 5000);
+      }
     });
   }
 });
