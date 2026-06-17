@@ -53,69 +53,195 @@
       <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Portfolio</div>
       <span class="eyebrow">Our Work</span>
       <h1>A look at recent projects.</h1>
-      <p>Bed installations, mulching, cleanups, and full landscape transformations across Northeast Ohio.</p>
+      <p>Bed installations, mulching, cleanups, mowing, snow removal, and full landscape transformations across Northeast Ohio.</p>
     </div>
   </section>
 
-  <section>
+  <style>
+    .portfolio-section { padding: 3rem 0 1rem; }
+    .portfolio-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--olive-dark); margin-bottom: 0.4rem; }
+    .portfolio-section .eyebrow { color: var(--olive); margin-bottom: 0.6rem; display:inline-block; }
+    .portfolio-section .section-intro { color: #555; max-width: 640px; margin-bottom: 2rem; font-size: 1rem; }
+    .portfolio-masonry { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .portfolio-masonry .portfolio-item { position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 10px; box-shadow: var(--shadow-sm); cursor: zoom-in; }
+    .portfolio-masonry .portfolio-item.tall { aspect-ratio: 3/4; }
+    .portfolio-masonry .portfolio-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+    @media (max-width: 720px) { .portfolio-masonry .portfolio-item.wide { grid-column: span 1; aspect-ratio: 4/3; } }
+    .portfolio-masonry .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display:block; }
+    .portfolio-masonry .portfolio-item:hover img { transform: scale(1.06); }
+    .portfolio-masonry .portfolio-item-overlay { position: absolute; inset: auto 0 0 0; padding: 1rem 1.1rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; transform: translateY(8px); opacity: 0; transition: all 0.3s ease; }
+    .portfolio-masonry .portfolio-item:hover .portfolio-item-overlay { transform: translateY(0); opacity: 1; }
+    .portfolio-masonry .portfolio-item-overlay h4 { font-size: 1rem; margin: 0 0 0.15rem 0; }
+    .portfolio-masonry .portfolio-item-overlay p { font-size: 0.8rem; margin: 0; opacity: 0.9; }
+    .pf-divider { height: 1px; background: linear-gradient(to right, transparent, #ddd, transparent); margin: 2rem 0; }
+  </style>
+
+  <section class="portfolio-section">
     <div class="container">
-      <div class="portfolio-grid">
-        <div class="portfolio-item portfolio-item-wide reveal">
-          <img src="images/portfolio/white-stone-house-striped-lawn.jpg" alt="Freshly cut lawn with crisp mowing stripes at a white stone-trimmed estate in Aurora, Ohio" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Full Property Maintenance</h4><p>Aurora, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal reveal-delay-1">
-          <img src="images/portfolio/scag-mower-striped-lawn.jpg" alt="Scag zero-turn mower mid-job on a freshly striped Northeast Ohio lawn" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Weekly Lawn Care</h4><p>Chagrin Falls, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal reveal-delay-2">
-          <img src="images/portfolio/white-colonial-striped-lawn.jpg" alt="White colonial home with mowing stripes across the front lawn under blue sky in Aurora, Ohio" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Estate Lawn Care</h4><p>Aurora, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal">
-          <img src="images/portfolio/red-brick-house-mulch.jpg" alt="Freshly installed dark mulch beds at a red brick home in Bainbridge, Ohio" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Mulch &amp; Bed Refresh</h4><p>Bainbridge, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal reveal-delay-1">
-          <img src="images/portfolio/brick-house-paver-walkway.jpg" alt="Brick home with paver walkway, defined edges, and refreshed landscape beds in South Russell, Ohio" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Beds &amp; Hardscape</h4><p>South Russell, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal reveal-delay-2">
-          <img src="images/portfolio/mulch-bed-tree-rocks.jpg" alt="Detailed mulched bed with rock border, Japanese maple, and decorative bushes in front of a residential home" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Custom Bed Design</h4><p>Auburn, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal">
-          <img src="images/portfolio/stone-house-mulch-beds.jpg" alt="Stone and shingle home with fresh mulch beds and pavers in Chagrin Falls, Ohio" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Full Bed Installation</h4><p>Chagrin Falls, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal reveal-delay-1">
-          <img src="images/portfolio/tan-stone-house-mulch.jpg" alt="Tan stone home with freshly mulched landscape beds and decorative plantings in Auburn, Ohio" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Mulch Refresh</h4><p>Auburn, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal reveal-delay-2">
-          <img src="images/portfolio/brick-house-lawn.jpg" alt="Brick home with mature trees and a perfectly maintained lawn in Chagrin Falls, Ohio" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Lawn &amp; Tree Care</h4><p>Chagrin Falls, OH</p></div>
-        </div>
-        <div class="portfolio-item portfolio-item-wide reveal">
-          <img src="images/portfolio/truck-snow-plow-trailer.jpg" alt="Eagle Scapes truck with snow plow attached and branded trailer ready for winter service in Northeast Ohio" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Snow Plow Ready</h4><p>Serving Northeast Ohio</p></div>
-        </div>
-        <div class="portfolio-item reveal reveal-delay-1">
-          <img src="images/portfolio/truck-trailer-tudor-house.jpg" alt="Eagle Scapes truck and trailer parked at a Tudor-style home before a landscape job in Bainbridge, Ohio" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>On-Site at the Estate</h4><p>Bainbridge, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal reveal-delay-2">
-          <img src="images/portfolio/fall-leaf-cleanup.jpg" alt="Eagle Scapes crew performing fall leaf cleanup with backpack blowers in a wooded Aurora yard" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Fall Leaf Cleanup</h4><p>Aurora, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal">
-          <img src="images/portfolio/lab-in-leaves.jpg" alt="Black lab popping out of a freshly raked leaf pile during a fall cleanup job" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Best Helper On The Crew</h4><p>Aurora, OH</p></div>
-        </div>
-        <div class="portfolio-item reveal reveal-delay-1">
-          <img src="images/portfolio/owner-with-truck.webp" alt="Nathan Meyer, owner of Eagle Scapes, standing with his work truck in Aurora, Ohio" loading="lazy" />
-          <div class="portfolio-item-overlay"><h4>Owner-Operated</h4><p>Nathan Meyer, Aurora, OH</p></div>
-        </div>
+      <span class="eyebrow">Lawn Care</span>
+      <h2>Property Maintenance &amp; Mowing</h2>
+      <p class="section-intro">Stripes you can spot from the street. Weekly mowing, edging, and bed care across Aurora, Chagrin Falls, Bainbridge, and South Russell.</p>
+      <div class="portfolio-masonry">
+        <div class="portfolio-item wide reveal"><img src="images/portfolio/mowing-01.jpg" alt="Crisp diagonal mowing stripes on a large Aurora, Ohio lawn" loading="lazy" /><div class="portfolio-item-overlay"><h4>Estate Mow &amp; Stripe</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/mowing-02.jpg" alt="Front yard with bold mowing stripes leading up to colonial home" loading="lazy" /><div class="portfolio-item-overlay"><h4>Weekly Mowing</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/mowing-03.jpg" alt="Crisp lawn stripes on a residential property" loading="lazy" /><div class="portfolio-item-overlay"><h4>Routine Maintenance</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/mowing-04.jpg" alt="Patterned mow in front of stone-trim home" loading="lazy" /><div class="portfolio-item-overlay"><h4>Lawn Stripes</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/mowing-05.jpg" alt="Even mowing stripes on a freshly cut lawn" loading="lazy" /><div class="portfolio-item-overlay"><h4>Weekly Service</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/mowing-06.jpg" alt="Open lawn freshly mowed with clean cut lines" loading="lazy" /><div class="portfolio-item-overlay"><h4>Lush Lawn Cut</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item wide reveal"><img src="images/portfolio/mowing-07.jpg" alt="Wide angle mowed lawn at a Northeast Ohio property" loading="lazy" /><div class="portfolio-item-overlay"><h4>Full Property Cut</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/mowing-08.jpg" alt="Side yard with green stripes" loading="lazy" /><div class="portfolio-item-overlay"><h4>Side Yard Detail</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/mowing-09.jpg" alt="Manicured lawn with crisp edges" loading="lazy" /><div class="portfolio-item-overlay"><h4>Sharp Edges</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/mowing-10.jpg" alt="Mowed lawn front yard with mature trees" loading="lazy" /><div class="portfolio-item-overlay"><h4>Tree-Lined Lawn</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/mowing-11.jpg" alt="Aerial-style striped lawn cut" loading="lazy" /><div class="portfolio-item-overlay"><h4>Lawn Patterns</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/mowing-12.jpg" alt="Two-tone mowing pattern on residential lawn" loading="lazy" /><div class="portfolio-item-overlay"><h4>Two-Tone Stripes</h4><p>Auburn, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/mowing-13.jpg" alt="Lush green Ohio lawn after weekly cut" loading="lazy" /><div class="portfolio-item-overlay"><h4>Weekly Cut</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/mowing-14.jpg" alt="Curving driveway with striped front lawn" loading="lazy" /><div class="portfolio-item-overlay"><h4>Drive &amp; Lawn</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/mowing-15.jpg" alt="Large yard mowed and edged for the week" loading="lazy" /><div class="portfolio-item-overlay"><h4>Large Property</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/mowing-16.jpg" alt="Pristine lawn at a Northeast Ohio residence" loading="lazy" /><div class="portfolio-item-overlay"><h4>Pristine Mow</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/mowing-17.jpg" alt="Diagonal mowing pattern" loading="lazy" /><div class="portfolio-item-overlay"><h4>Diagonal Stripes</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/mowing-18.jpg" alt="Lawn stripes across spacious yard" loading="lazy" /><div class="portfolio-item-overlay"><h4>Spacious Cut</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/mowing-19.jpg" alt="Crew finishes a mowing job" loading="lazy" /><div class="portfolio-item-overlay"><h4>Job Wrap-Up</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/mowing-20.jpg" alt="Final stripes on a Northeast Ohio lawn" loading="lazy" /><div class="portfolio-item-overlay"><h4>Final Stripes</h4><p>Bainbridge, OH</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pf-divider"></div>
+
+  <section class="portfolio-section">
+    <div class="container">
+      <span class="eyebrow">Landscaping</span>
+      <h2>Landscape Design &amp; Installation</h2>
+      <p class="section-intro">From curb-appeal refresh to estate lighting and full landscape installs — these are some of the projects we're most proud of.</p>
+      <div class="portfolio-masonry">
+        <div class="portfolio-item wide reveal"><img src="images/portfolio/landscape-02.jpg" alt="Twilight landscape lighting on a stone-front mansion in Aurora, Ohio" loading="lazy" /><div class="portfolio-item-overlay"><h4>Estate Landscape &amp; Lighting</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/landscape-03.jpg" alt="Twilight shot of mansion with mulched beds and architectural lighting" loading="lazy" /><div class="portfolio-item-overlay"><h4>Front Entry Refresh</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/landscape-04.jpg" alt="Stone mansion at dusk with full landscape install" loading="lazy" /><div class="portfolio-item-overlay"><h4>Estate Install</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/landscape-01.jpg" alt="Front yard landscape design at dusk" loading="lazy" /><div class="portfolio-item-overlay"><h4>Curb Appeal at Dusk</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/landscape-05.jpg" alt="Brick mansion with mulched curve beds and lighting" loading="lazy" /><div class="portfolio-item-overlay"><h4>Curved Bed Design</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/landscape-06.jpg" alt="Architectural lighting and lush lawn after install" loading="lazy" /><div class="portfolio-item-overlay"><h4>Architectural Lighting</h4><p>Auburn, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/landscape-07.jpg" alt="Stone mansion landscape full view" loading="lazy" /><div class="portfolio-item-overlay"><h4>Full Property Design</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/landscape-08.jpg" alt="Mulched corner bed install" loading="lazy" /><div class="portfolio-item-overlay"><h4>Foundation Bed Install</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/landscape-09.jpg" alt="Brick home with refreshed landscaping" loading="lazy" /><div class="portfolio-item-overlay"><h4>Front Yard Refresh</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/landscape-10.jpg" alt="Front lawn and bed work at a colonial home" loading="lazy" /><div class="portfolio-item-overlay"><h4>Colonial Curb Appeal</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/landscape-11.jpg" alt="Tan home with curved mulch bed and lush green lawn" loading="lazy" /><div class="portfolio-item-overlay"><h4>Curved Bed &amp; Lawn</h4><p>Auburn, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/landscape-12.jpg" alt="Stone-front home with mulched curve bed" loading="lazy" /><div class="portfolio-item-overlay"><h4>Stone Home Design</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/landscape-13.jpg" alt="Lush lawn and bed work at stone home" loading="lazy" /><div class="portfolio-item-overlay"><h4>Estate Refresh</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/landscape-14.jpg" alt="Side yard landscape install" loading="lazy" /><div class="portfolio-item-overlay"><h4>Side Yard Install</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/landscape-15.jpg" alt="Wide angle of estate property landscape" loading="lazy" /><div class="portfolio-item-overlay"><h4>Estate Wide View</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/landscape-16.jpg" alt="Detailed landscape corner with mulch and lawn" loading="lazy" /><div class="portfolio-item-overlay"><h4>Foundation Detail</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/landscape-17.jpg" alt="Lush lawn and mulched bed transition" loading="lazy" /><div class="portfolio-item-overlay"><h4>Lawn-to-Bed Edge</h4><p>Auburn, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/brick-house-paver-walkway.jpg" alt="Brick home with paver walkway and refreshed beds" loading="lazy" /><div class="portfolio-item-overlay"><h4>Paver Walkway</h4><p>South Russell, OH</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pf-divider"></div>
+
+  <section class="portfolio-section">
+    <div class="container">
+      <span class="eyebrow">Mulching</span>
+      <h2>Mulch &amp; Bed Installations</h2>
+      <p class="section-intro">Fresh mulch and crisp bed edges instantly transform a property. We install premium dark mulch, cleanly edge each bed, and respect every plant.</p>
+      <div class="portfolio-masonry">
+        <div class="portfolio-item wide reveal"><img src="images/portfolio/mulch-01.jpg" alt="Freshly mulched curved bed with pink flowers" loading="lazy" /><div class="portfolio-item-overlay"><h4>Curved Mulch Bed</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/mulch-02.jpg" alt="Side of home with fresh dark mulch install" loading="lazy" /><div class="portfolio-item-overlay"><h4>Side Yard Refresh</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/mulch-03.jpg" alt="Mulched foundation bed with seasonal flowers" loading="lazy" /><div class="portfolio-item-overlay"><h4>Foundation Refresh</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/mulch-04.jpg" alt="Dark mulch installation along home siding" loading="lazy" /><div class="portfolio-item-overlay"><h4>Dark Mulch Install</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/mulch-05.jpg" alt="Edged mulch bed transition to fresh lawn" loading="lazy" /><div class="portfolio-item-overlay"><h4>Crisp Edges</h4><p>Auburn, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/mulch-06.jpg" alt="Fresh mulch bed install at residential home" loading="lazy" /><div class="portfolio-item-overlay"><h4>Bed Install</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/mulch-07.jpg" alt="Mulched front bed at tan home" loading="lazy" /><div class="portfolio-item-overlay"><h4>Front Bed Refresh</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/mulch-08.jpg" alt="Wide angle of mulched property" loading="lazy" /><div class="portfolio-item-overlay"><h4>Full Mulch Refresh</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/mulch-09.jpg" alt="Mulch bed close-up showing fresh install" loading="lazy" /><div class="portfolio-item-overlay"><h4>Premium Mulch</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/mulch-10.jpg" alt="Mulch bed with curved edge" loading="lazy" /><div class="portfolio-item-overlay"><h4>Curved Edge Detail</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/red-brick-house-mulch.jpg" alt="Red brick home with fresh dark mulch" loading="lazy" /><div class="portfolio-item-overlay"><h4>Brick Home Mulch</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/mulch-bed-tree-rocks.jpg" alt="Detailed mulched bed with rock border and Japanese maple" loading="lazy" /><div class="portfolio-item-overlay"><h4>Custom Bed</h4><p>Auburn, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/stone-house-mulch-beds.jpg" alt="Stone home with fresh mulch beds" loading="lazy" /><div class="portfolio-item-overlay"><h4>Stone Home Mulch</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/tan-stone-house-mulch.jpg" alt="Tan stone home with freshly mulched beds" loading="lazy" /><div class="portfolio-item-overlay"><h4>Mulch &amp; Plantings</h4><p>Auburn, OH</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pf-divider"></div>
+
+  <section class="portfolio-section">
+    <div class="container">
+      <span class="eyebrow">Winter</span>
+      <h2>Snow &amp; Ice Removal</h2>
+      <p class="section-intro">When lake-effect snow hits Northeast Ohio, we're already on the road. Commercial plowing, residential driveways, and salt application — 24/7.</p>
+      <div class="portfolio-masonry">
+        <div class="portfolio-item wide reveal"><img src="images/portfolio/snow-01.jpg" alt="Eagle Scapes plow truck at night clearing commercial lot" loading="lazy" /><div class="portfolio-item-overlay"><h4>Overnight Plow Run</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/snow-02.jpg" alt="Plow truck mid-job at night in snowstorm" loading="lazy" /><div class="portfolio-item-overlay"><h4>Storm Response</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/snow-03.jpg" alt="Truck and trailer ready for winter service" loading="lazy" /><div class="portfolio-item-overlay"><h4>Winter Ready</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/snow-04.jpg" alt="Eagle Scapes branded equipment for snow removal" loading="lazy" /><div class="portfolio-item-overlay"><h4>Equipment Lined Up</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/snow-05.jpg" alt="Salt spreader and plow truck" loading="lazy" /><div class="portfolio-item-overlay"><h4>Salt &amp; Plow</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/snow-06.jpg" alt="Truck with plow on snowy night" loading="lazy" /><div class="portfolio-item-overlay"><h4>Night Plow</h4><p>Northeast Ohio</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/truck-snow-plow-trailer.jpg" alt="Eagle Scapes truck with snow plow and branded trailer" loading="lazy" /><div class="portfolio-item-overlay"><h4>Branded Fleet</h4><p>Serving Northeast Ohio</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pf-divider"></div>
+
+  <section class="portfolio-section">
+    <div class="container">
+      <span class="eyebrow">Fall Service</span>
+      <h2>Seasonal Cleanups</h2>
+      <p class="section-intro">Spring &amp; fall cleanups, bed redefining, debris removal, and shrub pruning — keeping Northeast Ohio properties sharp through every season.</p>
+      <div class="portfolio-masonry">
+        <div class="portfolio-item wide reveal"><img src="images/portfolio/fall-01.jpg" alt="Fall foliage at Northeast Ohio property" loading="lazy" /><div class="portfolio-item-overlay"><h4>Autumn at the Estate</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/fall-02.jpg" alt="Truck on-site for fall cleanup" loading="lazy" /><div class="portfolio-item-overlay"><h4>Fall Cleanup Crew</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/fall-03.jpg" alt="Front yard with autumn color" loading="lazy" /><div class="portfolio-item-overlay"><h4>Front Yard Fall</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/fall-04.jpg" alt="Lawn with fall leaves" loading="lazy" /><div class="portfolio-item-overlay"><h4>Pre-Cleanup</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/fall-05.jpg" alt="Autumn home and yard" loading="lazy" /><div class="portfolio-item-overlay"><h4>Late Fall Curb</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/fall-06.jpg" alt="Open lawn covered in autumn leaves before cleanup" loading="lazy" /><div class="portfolio-item-overlay"><h4>Pre-Cleanup Yard</h4><p>Auburn, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/fall-07.jpg" alt="Wide property with fall trees" loading="lazy" /><div class="portfolio-item-overlay"><h4>Treeline at Dusk</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/fall-08.jpg" alt="Fall sunset over Eagle Scapes property" loading="lazy" /><div class="portfolio-item-overlay"><h4>Sunset Service</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/fall-09.jpg" alt="Late autumn property cleanup" loading="lazy" /><div class="portfolio-item-overlay"><h4>Late Autumn</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/fall-leaf-cleanup.jpg" alt="Eagle Scapes crew performing fall leaf cleanup" loading="lazy" /><div class="portfolio-item-overlay"><h4>Leaf Blowing</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/lab-in-leaves.jpg" alt="Black lab popping out of a freshly raked leaf pile" loading="lazy" /><div class="portfolio-item-overlay"><h4>Best Helper</h4><p>Aurora, OH</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pf-divider"></div>
+
+  <section class="portfolio-section">
+    <div class="container">
+      <span class="eyebrow">Behind the Scenes</span>
+      <h2>Equipment &amp; Team</h2>
+      <p class="section-intro">Pro-grade gear, ready-to-roll fleet, and the team that backs it up. Eagle Scapes runs commercial-tier equipment on every residential job.</p>
+      <div class="portfolio-masonry">
+        <div class="portfolio-item wide reveal"><img src="images/portfolio/equipment-01.jpg" alt="Mowers loading on Eagle Scapes trailer" loading="lazy" /><div class="portfolio-item-overlay"><h4>Loading Up</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/equipment-02.jpg" alt="Eagle Scapes commercial mower mid-job" loading="lazy" /><div class="portfolio-item-overlay"><h4>Commercial Mower</h4><p>On Site</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/equipment-03.jpg" alt="Zero turn mower on freshly cut lawn" loading="lazy" /><div class="portfolio-item-overlay"><h4>Zero Turn at Work</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/equipment-04.jpg" alt="Equipment lined up before route" loading="lazy" /><div class="portfolio-item-overlay"><h4>Pre-Route Setup</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/equipment-05.jpg" alt="Fleet vehicles at warehouse" loading="lazy" /><div class="portfolio-item-overlay"><h4>Fleet Ready</h4><p>HQ</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/equipment-06.jpg" alt="Commercial vehicles ready to deploy" loading="lazy" /><div class="portfolio-item-overlay"><h4>Ready to Deploy</h4><p>HQ</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/equipment-07.jpg" alt="Truck on site at property" loading="lazy" /><div class="portfolio-item-overlay"><h4>On Site</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/equipment-08.jpg" alt="Truck at residential job" loading="lazy" /><div class="portfolio-item-overlay"><h4>Residential Visit</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/owner-with-truck.webp" alt="Nathan Meyer with his work truck" loading="lazy" /><div class="portfolio-item-overlay"><h4>Owner-Operated</h4><p>Nathan Meyer, Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/truck-trailer-tudor-house.jpg" alt="Eagle Scapes truck and trailer at Tudor home" loading="lazy" /><div class="portfolio-item-overlay"><h4>Estate Visit</h4><p>Bainbridge, OH</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pf-divider"></div>
+
+  <section class="portfolio-section">
+    <div class="container">
+      <span class="eyebrow">Specialty</span>
+      <h2>Hardscape, Playgrounds &amp; Specialty Work</h2>
+      <p class="section-intro">Beyond the basics — playground mulch installs, custom bed designs, and detail-driven site work.</p>
+      <div class="portfolio-masonry">
+        <div class="portfolio-item wide reveal"><img src="images/portfolio/specialty-01.jpg" alt="Playground area with fresh mulch install" loading="lazy" /><div class="portfolio-item-overlay"><h4>Playground Mulch Install</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/specialty-02.jpg" alt="Swing set with fresh play surface" loading="lazy" /><div class="portfolio-item-overlay"><h4>Play Surface Refresh</h4><p>Chagrin Falls, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/specialty-03.jpg" alt="Swing set in mulched area" loading="lazy" /><div class="portfolio-item-overlay"><h4>Backyard Playground</h4><p>Bainbridge, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/specialty-04.jpg" alt="Specialty detail bed work" loading="lazy" /><div class="portfolio-item-overlay"><h4>Detail Bed Work</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/specialty-05.jpg" alt="Custom outdoor feature" loading="lazy" /><div class="portfolio-item-overlay"><h4>Custom Feature</h4><p>South Russell, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-2"><img src="images/portfolio/specialty-06.jpg" alt="Detail of finished project" loading="lazy" /><div class="portfolio-item-overlay"><h4>Detail Work</h4><p>Auburn, OH</p></div></div>
+        <div class="portfolio-item reveal"><img src="images/portfolio/specialty-07.jpg" alt="Specialty install" loading="lazy" /><div class="portfolio-item-overlay"><h4>Specialty Install</h4><p>Aurora, OH</p></div></div>
+        <div class="portfolio-item reveal reveal-delay-1"><img src="images/portfolio/specialty-08.jpg" alt="Finished specialty project" loading="lazy" /><div class="portfolio-item-overlay"><h4>Finished Project</h4><p>Chagrin Falls, OH</p></div></div>
       </div>
     </div>
   </section>

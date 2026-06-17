@@ -115,6 +115,35 @@
   </section>
 
 
+  <style>
+    .svc-gallery { padding: 4rem 0 5rem; background: var(--cream); }
+    .svc-gallery h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--olive-dark); margin-bottom: 0.4rem; }
+    .svc-gallery p.intro { color: #555; max-width: 580px; margin-bottom: 2rem; }
+    .svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .svc-grid figure { margin: 0; position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 10px; box-shadow: var(--shadow-sm); }
+    .svc-grid figure.wide { grid-column: span 2; aspect-ratio: 16/9; }
+    @media (max-width: 720px) { .svc-grid figure.wide { grid-column: span 1; aspect-ratio: 4/3; } }
+    .svc-grid figure img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .svc-grid figure:hover img { transform: scale(1.05); }
+    .svc-grid figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.7rem 1rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; font-size: 0.85rem; font-weight: 500; }
+  </style>
+  <section class="svc-gallery">
+    <div class="container">
+      <span class="eyebrow">Snow Operations</span>
+      <h2>On the road when the snow hits.</h2>
+      <p class="intro">Commercial plowing, driveways, salt application — 24/7 storm response across Northeast Ohio.</p>
+      <div class="svc-grid">
+        <figure class="wide reveal"><img src="../images/portfolio/snow-01.jpg" alt="Plow truck at night clearing commercial lot" loading="lazy" /><figcaption>Overnight plow run — Aurora</figcaption></figure>
+        <figure class="reveal reveal-delay-1"><img src="../images/portfolio/snow-02.jpg" alt="Plow truck mid-job in snowstorm" loading="lazy" /><figcaption>Storm response — Chagrin Falls</figcaption></figure>
+        <figure class="reveal reveal-delay-2"><img src="../images/portfolio/snow-03.jpg" alt="Truck and trailer ready for winter" loading="lazy" /><figcaption>Winter ready — Bainbridge</figcaption></figure>
+        <figure class="reveal"><img src="../images/portfolio/snow-05.jpg" alt="Salt spreader and plow truck" loading="lazy" /><figcaption>Salt &amp; plow — South Russell</figcaption></figure>
+        <figure class="reveal reveal-delay-1"><img src="../images/portfolio/snow-04.jpg" alt="Branded equipment for snow removal" loading="lazy" /><figcaption>Equipment lined up — Aurora</figcaption></figure>
+        <figure class="reveal reveal-delay-2"><img src="../images/portfolio/truck-snow-plow-trailer.jpg" alt="Branded truck and trailer with plow" loading="lazy" /><figcaption>Branded fleet — NE Ohio</figcaption></figure>
+      </div>
+      <div style="text-align:center; margin-top:2.5rem;"><a href="../portfolio.html" class="btn btn-outline">See full portfolio &rarr;</a></div>
+    </div>
+  </section>
+
   <section class="cta-band">
     <div class="container">
       <div class="reveal"><h2>Lock in your winter contract.</h2><p>Snow contracts fill up by October. Get yours scheduled now.</p>

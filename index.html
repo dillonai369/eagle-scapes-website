@@ -395,6 +395,45 @@
     </div>
   </section>
 
+  <!-- ================ RECENT WORK GALLERY ================ -->
+  <style>
+    .home-gallery { padding: 5rem 0 5rem; background: var(--cream); }
+    .home-gallery .head { display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap: 1rem; margin-bottom: 2.2rem; }
+    .home-gallery h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--olive-dark); margin: 0.3rem 0 0.4rem; max-width: 600px; }
+    .home-gallery p.intro { color: #555; max-width: 540px; margin: 0; }
+    .home-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; gap: 14px; }
+    .home-grid figure { margin: 0; position: relative; overflow: hidden; border-radius: 12px; box-shadow: var(--shadow-sm); }
+    .home-grid figure img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .home-grid figure:hover img { transform: scale(1.06); }
+    .home-grid figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.7rem 1rem; background: linear-gradient(transparent, rgba(0,0,0,0.78)); color: white; font-size: 0.85rem; font-weight: 500; }
+    .home-grid .span-2-col { grid-column: span 2; }
+    .home-grid .span-2-row { grid-row: span 2; }
+    @media (max-width: 900px) { .home-grid { grid-template-columns: repeat(2, 1fr); } .home-grid .span-2-col { grid-column: span 2; } .home-grid .span-2-row { grid-row: auto; } }
+    @media (max-width: 480px) { .home-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; } .home-grid .span-2-col { grid-column: auto; } }
+  </style>
+  <section class="home-gallery">
+    <div class="container">
+      <div class="head reveal">
+        <div>
+          <span class="eyebrow">Recent Work</span>
+          <h2>A few of our recent jobs across Northeast Ohio.</h2>
+          <p class="intro">Mowing, landscaping, mulch installs, fall cleanups, and snow operations — the work speaks for itself.</p>
+        </div>
+        <a href="portfolio.html" class="btn btn-outline">View Full Portfolio &rarr;</a>
+      </div>
+      <div class="home-grid">
+        <figure class="span-2-col span-2-row reveal"><img src="images/portfolio/landscape-02.jpg" alt="Estate landscape lighting at dusk in Aurora, Ohio" loading="lazy" /><figcaption>Estate landscape &amp; lighting — Aurora</figcaption></figure>
+        <figure class="reveal reveal-delay-1"><img src="images/portfolio/mowing-01.jpg" alt="Crisp lawn stripes" loading="lazy" /><figcaption>Estate mow — Aurora</figcaption></figure>
+        <figure class="reveal reveal-delay-2"><img src="images/portfolio/mulch-01.jpg" alt="Fresh mulch install" loading="lazy" /><figcaption>Mulch bed install</figcaption></figure>
+        <figure class="reveal"><img src="images/portfolio/snow-01.jpg" alt="Overnight snow plow run" loading="lazy" /><figcaption>Snow plow — overnight</figcaption></figure>
+        <figure class="reveal reveal-delay-1"><img src="images/portfolio/fall-01.jpg" alt="Autumn at estate" loading="lazy" /><figcaption>Autumn estate — Aurora</figcaption></figure>
+        <figure class="span-2-col reveal reveal-delay-2"><img src="images/portfolio/landscape-05.jpg" alt="Curved bed design with landscape lighting" loading="lazy" /><figcaption>Curved bed design — Aurora</figcaption></figure>
+        <figure class="reveal"><img src="images/portfolio/mowing-04.jpg" alt="Mowing stripes" loading="lazy" /><figcaption>Stripes that pop</figcaption></figure>
+        <figure class="reveal reveal-delay-1"><img src="images/portfolio/equipment-02.jpg" alt="Commercial mower" loading="lazy" /><figcaption>Pro-grade equipment</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ================ CTA BAND ================ -->
   <section class="cta-band">
     <div class="container">

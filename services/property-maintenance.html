@@ -126,6 +126,37 @@
   </section>
 
 
+  <style>
+    .svc-gallery { padding: 4rem 0 5rem; background: var(--cream); }
+    .svc-gallery h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--olive-dark); margin-bottom: 0.4rem; }
+    .svc-gallery p.intro { color: #555; max-width: 580px; margin-bottom: 2rem; }
+    .svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .svc-grid figure { margin: 0; position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 10px; box-shadow: var(--shadow-sm); }
+    .svc-grid figure.wide { grid-column: span 2; aspect-ratio: 16/9; }
+    @media (max-width: 720px) { .svc-grid figure.wide { grid-column: span 1; aspect-ratio: 4/3; } }
+    .svc-grid figure img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .svc-grid figure:hover img { transform: scale(1.05); }
+    .svc-grid figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.7rem 1rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; font-size: 0.85rem; font-weight: 500; }
+  </style>
+  <section class="svc-gallery">
+    <div class="container">
+      <span class="eyebrow">Recent Mowing Jobs</span>
+      <h2>What our maintenance looks like.</h2>
+      <p class="intro">Stripes you can see from the curb. Edge work that frames the property. Here's a sample of recent visits.</p>
+      <div class="svc-grid">
+        <figure class="wide reveal"><img src="../images/portfolio/mowing-01.jpg" alt="Crisp diagonal mowing stripes" loading="lazy" /><figcaption>Estate mow &amp; stripe — Aurora</figcaption></figure>
+        <figure class="reveal reveal-delay-1"><img src="../images/portfolio/mowing-02.jpg" alt="Weekly mowing at colonial home" loading="lazy" /><figcaption>Weekly mowing — Chagrin Falls</figcaption></figure>
+        <figure class="reveal reveal-delay-2"><img src="../images/portfolio/mowing-04.jpg" alt="Patterned mow" loading="lazy" /><figcaption>Stripes — Aurora</figcaption></figure>
+        <figure class="reveal"><img src="../images/portfolio/mowing-07.jpg" alt="Wide mowed lawn" loading="lazy" /><figcaption>Full property cut — Bainbridge</figcaption></figure>
+        <figure class="reveal reveal-delay-1"><img src="../images/portfolio/mowing-13.jpg" alt="Lush green lawn" loading="lazy" /><figcaption>Weekly cut — Aurora</figcaption></figure>
+        <figure class="reveal reveal-delay-2"><img src="../images/portfolio/mowing-17.jpg" alt="Diagonal mow pattern" loading="lazy" /><figcaption>Diagonal stripes — Aurora</figcaption></figure>
+        <figure class="reveal"><img src="../images/portfolio/equipment-02.jpg" alt="Commercial mower at work" loading="lazy" /><figcaption>Commercial mower — On site</figcaption></figure>
+        <figure class="reveal reveal-delay-1"><img src="../images/portfolio/mowing-10.jpg" alt="Mowed lawn with mature trees" loading="lazy" /><figcaption>Tree-lined lawn — South Russell</figcaption></figure>
+      </div>
+      <div style="text-align:center; margin-top:2.5rem;"><a href="../portfolio.html" class="btn btn-outline">See more in our portfolio &rarr;</a></div>
+    </div>
+  </section>
+
   <section class="cta-band">
     <div class="container">
       <div class="reveal"><h2>Get a custom maintenance quote.</h2><p>Tell us about your property and we'll send you a tailored quote within 24 hours.</p>
