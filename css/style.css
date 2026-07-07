@@ -191,13 +191,11 @@ section { padding: var(--s-xl) 0; }
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  /* Crop the outer cream sticker ring built into the logo image */
-  transform: scale(1.22);
   transform-origin: center;
   transition: transform var(--t) var(--ease-bounce);
   background: var(--olive-dark);
 }
-.logo:hover .logo-img { transform: scale(1.22) rotate(-8deg) translateZ(0); }
+.logo:hover .logo-img { transform: rotate(-8deg) translateZ(0); }
 .logo-text {
   letter-spacing: -0.01em;
   display: inline-flex;
