@@ -93,7 +93,7 @@
     <div class="container">
       <nav class="nav">
         <a href="index.html" class="logo">
-<img src="images/logo.png" alt="Eagle Scapes & Home Services logo" class="logo-img" width="320" height="320" /><span class="logo-text">Eagle Scapes<span class="logo-sub">Home Services</span></span>
+<img src="images/logo-192.png" alt="Eagle Scapes & Home Services logo" class="logo-img" width="320" height="320" /><span class="logo-text">Eagle Scapes<span class="logo-sub">Home Services</span></span>
         </a>
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
@@ -117,9 +117,10 @@
 
   <!-- ================ HERO ================ -->
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="video/hero-poster.jpg" aria-hidden="true">
-      <source src="video/eagleee.mp4" type="video/mp4">
-    </video>
+    <!-- Poster paints immediately; the video itself is attached after window load so
+         its ~1.8MB never sits on the critical render path. Same look, same autoplay loop. -->
+    <video class="hero-video" muted loop playsinline preload="none"
+           poster="video/hero-poster.webp" data-src="video/eagleee.mp4" aria-hidden="true"></video>
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
@@ -451,7 +452,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo"><img src="images/logo.png" alt="Eagle Scapes & Home Services logo" class="logo-img" width="320" height="320" /><span class="logo-text">Eagle Scapes<span class="logo-sub">Home Services</span></span></a>
+          <a href="index.html" class="logo"><img src="images/logo-192.png" alt="Eagle Scapes & Home Services logo" class="logo-img" width="320" height="320" /><span class="logo-text">Eagle Scapes<span class="logo-sub">Home Services</span></span></a>
           <p>Locally owned landscaping, lawn care, and snow removal serving Aurora, Chagrin Falls, Bainbridge, South Russell, Auburn, and Mantua, Ohio since 2023.</p>
           <div class="footer-social">
             <a href="https://www.facebook.com/profile.php?id=100091971379411" aria-label="Facebook" target="_blank" rel="noopener">
@@ -509,6 +510,42 @@
   </a>
 
   <script src="js/main.js"></script>
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a30c059bd8129997dc5da73" data-source="WEB_USER"></script>
+<script>
+/* Hero video attaches after load so its bytes never block first paint. */
+(function(){
+  var v=document.querySelector('video.hero-video[data-src]');
+  if(!v)return;
+  function go(){
+    if(v.dataset.done)return; v.dataset.done=1;
+    v.src=v.dataset.src; v.preload='auto';
+    var p=v.play(); if(p&&p.catch)p.catch(function(){});
+  }
+  if(document.readyState==='complete')setTimeout(go,200);
+  else window.addEventListener('load',function(){setTimeout(go,200)});
+})();
+</script>
+
+<script>
+/* Chat widget: loads 1.2s after window load, OR instantly on the first scroll/tap/keypress
+   — whichever comes first. Keeps its injected scripts off the critical render path without
+   taking the widget away from anyone who actually wants it. */
+(function(){
+  var done=0;
+  function load(){
+    if(done)return; done=1;
+    var s=document.createElement('script');
+    s.src='https://widgets.leadconnectorhq.com/loader.js';
+    s.setAttribute('data-resources-url','https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+    s.setAttribute('data-widget-id','6a30c059bd8129997dc5da73');
+    s.setAttribute('data-source','WEB_USER');
+    document.body.appendChild(s);
+  }
+  function arm(){ setTimeout(load,1200); }
+  if(document.readyState==='complete') arm(); else window.addEventListener('load',arm);
+  ['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){
+    window.addEventListener(ev,load,{once:true,passive:true});
+  });
+})();
+</script>
 </body>
 </html>
